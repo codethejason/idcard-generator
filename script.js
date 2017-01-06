@@ -1,0 +1,1 @@
+JsBarcode("#hacker1barcode", "1234567890123", {format: "itf14", width: 1.5, height: 40, fontSize: 16});

@@ -1,27 +1,60 @@
 <html>
 <head>
+  <title>ID Card Generator</title>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"></script>
+  <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="pageContainer">
     <!--Insert pages through javascript here-->
-    <template id="page1template">
+    <div class="card cardfront">
+      <img src="logo.png" class="logo" alt="logo">
+      <span class="title">Hack<strong>UC</strong> II</span>
+      <div class="bottomText">
+        <span class="participant">John Georgian</span>
+        <span class="role">HACKER</span>
+      </div>
+    </div>
+    
+    <div class="card cardback">
+      <span class="welcome">Welcome to HackUC!</span>
+      <p class="information">This is your personal ID card for your hackathon. Please wear it at all times. Use it for the following purposes:</p>
+      <ul class="bullets">
+        <li>Sign in and out of the event</li>
+        <li>Get breakfast, lunch, or dinner</li>
+        <li>Attend classes and activities</li>
+      </ul>
+      <div class="barcode">
+        <svg id="hacker1barcode"></svg>
+      </div>
+    </div>
+    
+    <!--<template id="page1template">
       <div class="card">
+        update later
         <div class="logo"></div>
-        <span class="title"></div>
-        <div class="participant"></div>
-        <div class="role"></div>
+        <span class="title"></span>
+        <span class="participant"></span>
+        <span class="role"></span>
       </div>
     </template>
     <template id="page2template"> 
-    <!-- back of the ID-->
+
+    -->
+    <!-- back of the ID
       <div class="card">
+        update later
         <span class="welcome"></div>
         <span class="information"></div>
         <span class="bullets"></div>
         <div class="barcode"></div>
       </div>
     </template>
+    -->
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
