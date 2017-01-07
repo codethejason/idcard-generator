@@ -4,20 +4,33 @@ html, body {
 }
 
 @page {
-  size: A4;
-  margin: 0.5in;
+  size: A4 landscape;
+  margin: 0in 0.25in;
 }
 
-.pageContainer {
-  display: flex;
+.page {
+  display: block;
+  width: 10in;
+  height: 7.5in;
+  margin-bottom: 0.5in;
+}
+
+.page div:nth-child(6n) {
+  page-break-after: always;
+}
+
+.pages div:nth-child(2n) {
+  /*Something here to push everything to the right*/
 }
 
 .card {
-  width: 3in;
-  height: 4in;
+  display: inline-block;
+  width: 2.8in;
+  height: 3.8in;
   position: relative;
   text-align: center;
   border: 1px #000 solid;
+  vertical-align: top; /* without alignment back cards move down front cards relative to them */
 }
 
 .cardback {
@@ -29,7 +42,7 @@ img.logo {
   height: 1.8in;
   width: 1.8in;
   margin: 0 auto;
-  padding: 0.2in 0 0;
+  padding: 0.1in 0 0;
 }
 
 .card span {
@@ -73,7 +86,7 @@ div.barcode {
 
 span.welcome {
   font-weight: 700;
-  font-size: 0.28in;
+  font-size: 0.26in;
   padding: 0.2in;
 }
 
