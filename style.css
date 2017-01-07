@@ -1,26 +1,30 @@
 html, body {
   font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
   -webkit-print-color-adjust: exact;
 }
 
 @page {
   size: A4 landscape;
-  margin: 0in 0.25in;
+  margin: 0 auto;
 }
 
 .page {
-  display: block;
-  width: 10in;
-  height: 7.5in;
+  display: flex;
+  width: 11in;
+  height: 7.6in;
   margin-bottom: 0.5in;
-}
-
-.page div:nth-child(6n) {
+  flex-wrap: wrap;
   page-break-after: always;
 }
 
-.pages div:nth-child(2n) {
-  /*Something here to push everything to the right*/
+.pages > div:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.clearfix {
+ clear: both; 
 }
 
 .card {
@@ -30,6 +34,7 @@ html, body {
   position: relative;
   text-align: center;
   border: 1px #000 solid;
+  box-sizing: border-box;
   vertical-align: top; /* without alignment back cards move down front cards relative to them */
 }
 
