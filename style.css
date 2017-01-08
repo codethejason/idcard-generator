@@ -13,7 +13,7 @@ html, body {
 .page {
   display: flex;
   width: 11in;
-  height: 7.6in;
+  height: 7.8in;
   margin-bottom: 0.5in;
   flex-wrap: wrap;
   page-break-after: always;
@@ -30,7 +30,7 @@ html, body {
 .card {
   display: inline-block;
   width: 2.8in;
-  height: 3.8in;
+  height: 3.9in;
   position: relative;
   text-align: center;
   border: 1px #000 solid;

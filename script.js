@@ -8,8 +8,6 @@ var users = [
   {name: "Justin Georgian", role: "hacker", id: 7}
 ];
 
-//maybe add group id (id in hacker or mentors group)
-
 window.onload = function() {
   //JsBarcode("#hacker1barcode", "1234567890123", {format: "itf14", width: 1.4, height: 40, fontSize: 16});
 
@@ -50,7 +48,24 @@ window.onload = function() {
           barcode.id = users[userCounter].role + users[userCounter].id;
           //barcodeID.id = userCounter;
           currentPage.appendChild(newEl);
-          JsBarcode("#"+barcode.id, "100000000000"+users[userCounter].id, {format: "itf14", width: 1.4, height: 40, fontSize: 16});
+          var head, tail;
+          switch(users[userCounter].role) {
+            case "hacker": head = "10"; break;
+            case "organizer": head = "20"; break;
+            case "sponsor": head = "30"; break;
+            case "mentor": head = "40"; break;
+            case "volunteer": head = "50"; break;
+            case "special": head = "60"; break;
+            default: head = "70";
+          }
+          switch(users[userCounter].id.toString().length) { //check number of digits of ID
+            case 1: tail = "000".concat(users[userCounter].id.toString()); break;
+            case 2: tail = "00".concat(users[userCounter].id.toString()); break;
+            case 3: tail = "0".concat(users[userCounter].id.toString()); break;
+            default: tail = users[userCounter].id.toString();
+          } 
+          
+          JsBarcode("#"+barcode.id, head.concat(tail), {format: "CODE128", width: 2.2, height: 40, fontSize: 16});
           userCounter++;
         }
       }
