@@ -25,7 +25,6 @@ function generateCards(users) {
     var pageNum = i;
     if(i == lastpage-1 && users.length%cardsPerPage != 0) { //if it's the last page and it's not full (last page as in last set)
       cardsPerPage = users.length%cardsPerPage; //remaining users
-      console.log(cardsPerPage);
     }
     if(pageNum%2 == 0) { //if it's an odd page number (index starts at 0)
       for(var j = 0; j < cardsPerPage; j++) {
@@ -34,6 +33,20 @@ function generateCards(users) {
         var role = newEl.querySelector(".role");
         participantName.textContent = users[userCounter].name;
         role.textContent = users[userCounter].role.toUpperCase();
+        var bgcolor;
+        switch(users[userCounter].role) {
+          case "hacker": bgcolor = "#000000"; break;
+          case "organizer": bgcolor = "#fb3200"; break;
+          case "sponsor": 
+          case "speaker": bgcolor = "#00ae4f"; break;
+          case "mentor": bgcolor = "#00b0f0"; break;
+          case "volunteer": bgcolor = "#a9a900"; break;
+          case "special": 
+          case "administrator": bgcolor = "#632881"; break;
+          default: bgcolor = "#000000";
+        }
+        
+        role.style.backgroundColor = bgcolor;
         currentPage.appendChild(newEl);
         userCounter++;
       }
@@ -43,16 +56,17 @@ function generateCards(users) {
         var newEl = backTemplate.content.cloneNode(true);
         var barcode = newEl.querySelector("svg");
         barcode.id = users[userCounter].role + users[userCounter].id;
-        //barcodeID.id = userCounter;
         currentPage.appendChild(newEl);
         var head, tail;
-        switch(users[userCounter].role.toLowerCase()) {
+        switch(users[userCounter].role) {
           case "hacker": head = "10"; break;
           case "organizer": head = "20"; break;
           case "sponsor": head = "30"; break;
+          case "speaker": head = "31"; break;
           case "mentor": head = "40"; break;
           case "volunteer": head = "50"; break;
           case "special": head = "60"; break;
+          case "administrator": head = "61"; break;
           default: head = "70";
         }
         switch(users[userCounter].id.toString().length) { //check number of digits of ID
@@ -131,8 +145,10 @@ function addRow() {
 function autoIncrement(checkbox) {
   if(checkbox.checked) {
     var ids = document.querySelectorAll('.rowID');
+    target = document.querySelector('#beginningTarget').value;
     for (var i=0; i < ids.length; i++) {
-      ids[i].value = i+1;
+      ids[i].value = target;
+      target++;
     }
   }
 }
