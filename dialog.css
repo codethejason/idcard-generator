@@ -1,0 +1,44 @@
+div.dialog {
+  display: block;
+  width: 75%;
+  margin: 5% auto;
+  box-shadow: 2px 2px 8px #888;
+  text-align: center;
+  padding: 10px 20px 20px;
+  box-sizing: border-box;
+}
+
+.jsonInput {
+  width: 80%;
+}
+
+.dialog button[type=submit] {
+  display: block;
+  margin: 10px auto;
+}
+
+#infoTable {
+  width: 100%;
+  border: 1px solid black;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px dashed black;
+}
+
+tr {
+  border-bottom: 1px dashed black;
+}
+
+#infoTable th:nth-child(1), #infoTable td:nth-child(1) {
+  width: 20%;
+}
+
+#infoTable th:nth-child(2), #infoTable td:nth-child(2) {
+  width: 40%;
+}
+
+#infoTable th:nth-child(3), #infoTable td:nth-child(3) {
+  width: 30%;
+}

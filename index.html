@@ -5,10 +5,38 @@
   <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"></script>
   <script src="script.js"></script>
+  <link href="dialog.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
+  <div class="dialog">
+    <h1>Generate ID Cards</h1>
+    <span>Enter the information into the following fields or use JSON import.</span>
+    <h2>Enter Data</h2>    
+    <input type="checkbox" name="vehicle" value="Bike">Use Auto Increment<br>
+    <table id="infoTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="addRow()">Add Row</button>
+    <hr>
+    <h2>Enter JSON</h2>
+    <textarea class="jsonInput"></textarea>
+    <button type="submit">Submit</button>
+  </div>
   <div class="pages"></div>
   
   <template id="cardfrontTemplate">
@@ -36,5 +64,14 @@
       </div>
     </div>
   </template>
-</body>
+  
+  <template id="rowTemplate">
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="number"></td>
+    </tr>
+  </template>
+
+  </body>
 </html>

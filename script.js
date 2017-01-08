@@ -74,3 +74,23 @@ window.onload = function() {
   
   generateCards(users);
 }
+
+function converttoReadable() {
+  
+}
+
+function converttoJSON() {
+  
+}
+
+//loads data into the users array
+function loadJSON() {
+  
+}
+
+function addRow() {
+  var rowTemplate = document.querySelector('#rowTemplate');
+  var newEl = rowTemplate.content.cloneNode(true);
+  var tbody = document.querySelector('#infoTable tbody');
+  tbody.appendChild(newEl);
+}
