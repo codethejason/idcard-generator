@@ -26,9 +26,6 @@ window.onload = function() {
       if(i == lastpage-1 && users.length%cardsPerPage != 0) { //if it's the last page and it's not full (last page as in last set)
         cardsPerPage = users.length%cardsPerPage; //remaining users
         console.log(cardsPerPage);
-      } else {
-        console.log(i);
-        console.log(lastpage);
       }
       if(pageNum%2 == 0) { //if it's an odd page number (index starts at 0)
         for(var j = 0; j < cardsPerPage; j++) {
@@ -76,16 +73,43 @@ window.onload = function() {
 }
 
 function converttoReadable() {
+  var ids = document.querySelectorAll('.rowID');
+  var textarea = document.querySelector('.jsonInput');
+  var tbody = document.querySelector('#infoTable tbody');
+  var jsonData = JSON.parse(textarea.value);
+  tbody.textContent = "";
+  console.log(jsonData.length);
+  for (var i=0; i < jsonData.length; i++) {
+    var row = addRow();
+    var id = document.querySelectorAll('.rowID')[i];
+    var name = document.querySelectorAll('.rowName')[i];
+    var role = document.querySelectorAll('.rowRole')[i];
+    id.value = jsonData[i].id;
+    name.value = jsonData[i].name;
+    role.value = jsonData[i].role;
+  }
   
 }
 
 function converttoJSON() {
-  
+  var data = [];
+  var id, name, role;
+  var ids = document.querySelectorAll('.rowID');
+  var names = document.querySelectorAll('.rowName');
+  var roles = document.querySelectorAll('.rowRole');
+  var textarea = document.querySelector('.jsonInput');
+  for (var i=0; i < ids.length; i++) {
+    id = ids[i].value;
+    name = names[i].value;
+    role = roles[i].value;
+    data.push({id:id, name:name, role:role});
+  }
+  textarea.value = JSON.stringify(data);
 }
 
 //loads data into the users array
-function loadJSON() {
-  
+function submitJSON() {
+  var dialog = document.querySelector('.dialog').style.display = "none";
 }
 
 function addRow() {
@@ -93,4 +117,13 @@ function addRow() {
   var newEl = rowTemplate.content.cloneNode(true);
   var tbody = document.querySelector('#infoTable tbody');
   tbody.appendChild(newEl);
+}
+
+function autoIncrement(checkbox) {
+  if(checkbox.checked) {
+    var ids = document.querySelectorAll('.rowID');
+    for (var i=0; i < ids.length; i++) {
+      ids[i].value = i+1;
+    }
+  }
 }

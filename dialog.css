@@ -9,7 +9,8 @@ div.dialog {
 }
 
 .jsonInput {
-  width: 80%;
+  width: 100%;
+  display: block;
 }
 
 .dialog button[type=submit] {

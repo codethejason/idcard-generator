@@ -14,7 +14,7 @@
     <h1>Generate ID Cards</h1>
     <span>Enter the information into the following fields or use JSON import.</span>
     <h2>Enter Data</h2>    
-    <input type="checkbox" name="vehicle" value="Bike">Use Auto Increment<br>
+    <input type="checkbox" name="autoIncrement" onchange="autoIncrement(this)">Use Auto Increment from <input type="number" value=1>
     <table id="infoTable">
       <thead>
         <tr>
@@ -24,18 +24,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><input type="number"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-        </tr>
       </tbody>
     </table>
     <button onclick="addRow()">Add Row</button>
+    <button onclick="converttoJSON()">Convert to JSON</button>
     <hr>
     <h2>Enter JSON</h2>
     <textarea class="jsonInput"></textarea>
-    <button type="submit">Submit</button>
+    <button onclick="converttoReadable()">Populate Fields</button>
+    <button type="submit" onclick="submitJSON()">Submit</button>
   </div>
   <div class="pages"></div>
   
@@ -66,10 +63,10 @@
   </template>
   
   <template id="rowTemplate">
-    <tr>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
-      <td><input type="number"></td>
+    <tr class="row">
+      <td><input type="text" class="rowID"></td>
+      <td><input type="text" class="rowName"></td>
+      <td><input type="number" class="rowRole"></td>
     </tr>
   </template>
 
