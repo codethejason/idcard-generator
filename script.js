@@ -15,7 +15,7 @@ function generateCards(users) {
   var pagesContainer = document.querySelector('.pages');
   var frontTemplate = document.querySelector('#cardfrontTemplate');
   var backTemplate = document.querySelector('#cardbackTemplate');
-  var cardsPerPage = 6;
+  var cardsPerPage = 4;
   var userCounter = 0;
   var lastpage = Math.ceil(users.length/cardsPerPage)*2-1;
   for(var i = 0; i < lastpage+1; i++) { //loop through pages, each user takes two pages
@@ -55,7 +55,8 @@ function generateCards(users) {
       for(var j = 0; j < cardsPerPage; j++) {
         var newEl = backTemplate.content.cloneNode(true);
         var barcode = newEl.querySelector("svg");
-        barcode.id = users[userCounter].role + users[userCounter].id;
+        barcodeNumber = 96385074;
+        barcode.id = "user"+barcodeNumber;
         currentPage.appendChild(newEl);
         var head, tail;
         switch(users[userCounter].role) {
@@ -75,8 +76,9 @@ function generateCards(users) {
           case 3: tail = "0".concat(users[userCounter].id.toString()); break;
           default: tail = users[userCounter].id.toString();
         } 
-
-        JsBarcode("#"+barcode.id, head.concat(tail), {format: "CODE128", width: 2.2, height: 40, fontSize: 16});
+        
+        barcodeNumber = 96385074;
+        JsBarcode("#"+barcode.id, barcodeNumber, {format: "EAN8", width: 3.5, height: 40, fontSize: 16});
         userCounter++;
       }
     }
