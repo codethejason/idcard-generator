@@ -31,7 +31,7 @@ function generateCards(users) {
           case "mentor": bgcolor = "#00b0f0"; break;
           case "volunteer": bgcolor = "#a9a900"; break;
           case "special": 
-          case "administrator": bgcolor = "#632881"; break;
+          case "admin": bgcolor = "#632881"; break;
           default: bgcolor = "#000000";
         }
         
@@ -57,7 +57,7 @@ function generateCards(users) {
           case "mentor": head = "40"; break;
           case "volunteer": head = "50"; break;
           case "special": head = "60"; break;
-          case "administrator": head = "61"; break;
+          case "admin": head = "61"; break;
           default: head = "70";
         }*/
         
