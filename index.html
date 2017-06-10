@@ -50,12 +50,11 @@
   <template id="cardbackTemplate"> 
     <div class="card cardback">
       <span class="welcome">Welcome to HackUC!</span>
-      <p class="information">This is your personal ID card for your hackathon. Please wear it at all times. Use it for the following purposes:</p>
-      <ul class="bullets">
-        <li>Sign in and out of the event</li>
-        <li>Get breakfast, lunch, or dinner</li>
-        <li>Attend classes and activities</li>
-      </ul>
+      <p class="information"></p>
+      <div class="wifiInfo">
+        <img src="wifi.png" alt="wifi" />
+        <span class="backprominent">UCVTS-Guest</span>
+      </div>
       <div class="barcode">
         <svg></svg>
       </div>
@@ -66,7 +65,16 @@
     <tr class="row">
       <td><input type="number" class="rowID"></td>
       <td><input type="text" class="rowName"></td>
-      <td><input type="text" class="rowRole"></td>
+      <td><select class="rowRole">
+        <option value="hacker">Hacker</option>
+        <option value="organizer">Organizer</option>
+        <option value="sponsor">Sponsor</option>
+        <option value="speaker">Speaker</option>
+        <option value="mentor">Mentor</option>
+        <option value="volunteer">Volunteer</option>
+        <option value="special">Special</option>
+        <option value="administrator">Admin</option>
+        </select></td>
     </tr>
   </template>
 

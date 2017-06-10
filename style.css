@@ -38,15 +38,14 @@ html, body {
 }
 
 .cardback {
-  background-color: #ebebeb;
 }
 
 img.logo {
   display: block;
-  height: 2.5in;
-  width: 2.5in;
+  height: 2.75in;
+  width: 2.75in;
   margin: 0 auto;
-  padding: 0.2in 0 0;
+  padding: 0.3in 0 0;
 }
 
 .card span {
@@ -55,11 +54,11 @@ img.logo {
 }
 
 span.title {
-  font-size: 0.5in;
+  font-size: 0.65in;
 }
 
 span.participant {
-  font-size: 0.3in;
+  font-size: 0.4in;
   font-family: cursive;
   bottom: 0.4in;
   background-color: #e1e1e1;
@@ -68,7 +67,7 @@ span.participant {
 }
 
 span.role {
-  font-size: 0.3in;
+  font-size: 0.4in;
   bottom: 0;
   background-color: #00b0f0;
   padding: 0.05in 0;
@@ -84,14 +83,14 @@ div.bottomText {
 
 div.barcode {
   margin: 0.2in 0.25in 0;
-  background-color: #fff;
+  background-color: #ebebeb;
   border-radius: 0.1in;
 }
 
 span.welcome {
   font-weight: 700;
-  font-size: 0.26in;
-  padding: 0.2in;
+  font-size: 0.28in;
+  padding: 0.3in;
 }
 
 p.information {
@@ -100,8 +99,11 @@ p.information {
   text-align: justify;
 }
 
-ul.bullets {
-  text-align: left;
-  font-size: 0.15in;
-  list-style-type: circle;
+.backprominent {
+  font-size: 30px;
+}
+
+.wifiInfo img, span.backprominent {
+  display: inline;
+  vertical-align: middle;
 }

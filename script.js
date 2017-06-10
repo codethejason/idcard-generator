@@ -1,16 +1,5 @@
 var users = [];
 
-let sampleData = [
-  {name: "John Georgian", role: "hacker", id: 1},
-  {name: "Jake Georgian", role: "hacker", id: 2},
-  {name: "Jacobian Georgian", role: "hacker", id: 3},
-  {name: "Jacob Georgian", role: "hacker", id: 4},
-  {name: "Jason Georgian", role: "hacker", id: 5},
-  {name: "George Georgian", role: "hacker", id: 6},
-  {name: "Justin Georgian", role: "hacker", id: 7}
-];
-
-
 function generateCards(users) {
   var pagesContainer = document.querySelector('.pages');
   var frontTemplate = document.querySelector('#cardfrontTemplate');
@@ -55,10 +44,11 @@ function generateCards(users) {
       for(var j = 0; j < cardsPerPage; j++) {
         var newEl = backTemplate.content.cloneNode(true);
         var barcode = newEl.querySelector("svg");
-        barcodeNumber = 96385074;
+        barcodeNumber = users[userCounter].id;
         barcode.id = "user"+barcodeNumber;
         currentPage.appendChild(newEl);
-        var head, tail;
+        
+        /* refer to this for the barcode pattern of each person
         switch(users[userCounter].role) {
           case "hacker": head = "10"; break;
           case "organizer": head = "20"; break;
@@ -69,16 +59,10 @@ function generateCards(users) {
           case "special": head = "60"; break;
           case "administrator": head = "61"; break;
           default: head = "70";
-        }
-        switch(users[userCounter].id.toString().length) { //check number of digits of ID
-          case 1: tail = "000".concat(users[userCounter].id.toString()); break;
-          case 2: tail = "00".concat(users[userCounter].id.toString()); break;
-          case 3: tail = "0".concat(users[userCounter].id.toString()); break;
-          default: tail = users[userCounter].id.toString();
-        } 
+        }*/
         
-        barcodeNumber = 96385074;
-        JsBarcode("#"+barcode.id, barcodeNumber, {format: "EAN8", width: 3.5, height: 40, fontSize: 16});
+        //barcodeNumber = 96385074;
+        JsBarcode("#"+barcode.id, barcodeNumber, {format: "EAN8", width: 3.5, height: 40, fontSize: 16, background: '#ebebeb'});
         userCounter++;
       }
     }
