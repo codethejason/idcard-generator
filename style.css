@@ -13,9 +13,11 @@ html, body {
 .page {
   display: flex;
   width: 7.8in;
-  height: 11in;
+  height: 10.9in;
   flex-wrap: wrap;
+  align-content: flex-start;
   page-break-after: always;
+  margin-left: 0.35in;
 }
 
 .pages > div:nth-child(2n) {
@@ -28,12 +30,14 @@ html, body {
 
 .card {
   display: inline-block;
-  width: 3.625in;
-  height: 5.5in;
+  width: 3.75in;
+  height: 5.4375in;
+  /* 1/8" bottom margin */
   position: relative;
   text-align: center;
   border: 1px #000 solid;
   box-sizing: border-box;
+  margin-right: 0.125in;
   vertical-align: top; /* without alignment back cards move down front cards relative to them */
 }
 
@@ -42,10 +46,10 @@ html, body {
 
 img.logo {
   display: block;
-  height: 2.75in;
-  width: 2.75in;
+  height: 2.6in;
+  width: 2.6in;
   margin: 0 auto;
-  padding: 0.3in 0 0;
+  padding: 0.25in 0 0;
 }
 
 .card span {
@@ -106,4 +110,5 @@ p.information {
 .wifiInfo img, span.backprominent {
   display: inline;
   vertical-align: middle;
+  padding: 3px;
 }
