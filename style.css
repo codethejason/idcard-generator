@@ -35,13 +35,13 @@ html, body {
   /* 1/4" bottom margin */
   position: relative;
   text-align: center;
-  border: 1px #000 solid;
   box-sizing: border-box;
   margin-right: 0.25in;
   vertical-align: top; /* without alignment back cards move down front cards relative to them */
 }
 
 .cardback {
+  font-family: 'Monda', sans-serif;
 }
 
 img.logo {
@@ -95,7 +95,8 @@ div.barcode {
 span.welcome {
   font-weight: 700;
   font-size: 0.28in;
-  padding: 0.3in;
+  padding-top: 0.3in;
+  margin-bottom: 0.1in;
 }
 
 p.information {
@@ -105,11 +106,35 @@ p.information {
 }
 
 .backprominent {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .wifiInfo img, span.backprominent {
   display: inline;
   vertical-align: middle;
   padding: 3px;
+}
+
+.scheduleDescription {
+  font-size: 10px;
+  padding: 10px 0 5px;
+}
+
+table.schedule {
+  margin: 0.1in auto 0;
+  font-size: 15px;
+}
+
+.schedule td {
+  border-top: 2px solid #999;
+  border-collapse: collapse;
+  padding: 3px 15px;
+}
+
+.schedule tr:last-child td {
+  border-bottom: 2px solid #999;
+}
+
+.schedule td:last-child {
+  text-align: right;
 }

@@ -28,10 +28,6 @@ th {
   border-bottom: 1px dashed black;
 }
 
-tr {
-  border-bottom: 1px dashed black;
-}
-
 #infoTable th:nth-child(1), #infoTable td:nth-child(1) {
   width: 20%;
 }
