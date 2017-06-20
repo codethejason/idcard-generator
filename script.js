@@ -62,7 +62,7 @@ function generateCards(users) {
         }*/
         
         //barcodeNumber = 96385074;
-        JsBarcode("#"+barcode.id, barcodeNumber, {format: "EAN8", width: 3.5, height: 40, fontSize: 16, background: '#ebebeb'});
+        JsBarcode("#"+barcode.id, barcodeNumber, {format: "CODE128", width: 2.5, height: 40, fontSize: 16, background: '#ebebeb'});
         userCounter++;
       }
     }
